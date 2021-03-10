@@ -1,6 +1,6 @@
 # URIBuilder-Java
 
-![](https://github./BastiaanJansen/URIBuilder-Java/workflows/Build/badge.svg)
+![](https://github.com/BastiaanJansen/URIBuilder-Java/workflows/Build/badge.svg)
 ![](https://github.com/BastiaanJansen/URIBuilder-Java/workflows/Test/badge.svg)
 ![](https://img.shields.io/github/license/BastiaanJansen/URIBuilder-Java)
 ![](https://img.shields.io/github/issues/BastiaanJansen/URIBuilder-Java)
