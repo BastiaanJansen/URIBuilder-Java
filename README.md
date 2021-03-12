@@ -22,3 +22,21 @@ A utility Java library to easily create and parse URI's.
 ```gradle
 implementation 'com.github.bastiaanjansen:uribuilder-java:1.0'
 ```
+
+## Usage
+
+To create a URI:
+```java
+URI uri = new URIBuilder()
+    .withScheme("https")
+    .withAuthority("authority.com")
+    .withPath("/path")
+    .withQueryParamater("key", "value")
+    .withFragment("fragment")
+    .build()
+```
+
+To parse a URI string to a URI instance:
+```java
+URI uri = URIBuilder.parse("https://authority.com/path?key=value#fragment");
+```
