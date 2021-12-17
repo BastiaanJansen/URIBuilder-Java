@@ -1,9 +1,7 @@
 package com.bastiaanjansen.url;
 
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.Map;
 
 public class URLBuilder {
@@ -14,9 +12,7 @@ public class URLBuilder {
     private Map<String, String> query;
     private String fragment;
 
-    public URLBuilder() {
-
-    }
+    public URLBuilder() { }
 
     public URLBuilder withScheme(String scheme) {
         this.scheme = scheme;
