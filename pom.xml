@@ -4,7 +4,7 @@
 
     <groupId>com.github.bastiaanjansen</groupId>
     <artifactId>uribuilder-java</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>0.1-SNAPSHOT</version>
     <url>https://github.com/BastiaanJansen/uri-builder-java</url>
 
     <name>URIBuilder-Java</name>
@@ -113,6 +113,7 @@
         <repository>
             <id>ossrh</id>
             <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <name>Central Repository OSSRH</name>
         </repository>
     </distributionManagement>
 
