@@ -32,3 +32,19 @@ jobs:
         with:
           name: artifact.jar
           path: artifacts
+
+  test:
+    needs: [build]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: [ 1.8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{ matrix.java }}
+      - name: Run tests with Maven
+        run: mvn -B test --file pom.xml
