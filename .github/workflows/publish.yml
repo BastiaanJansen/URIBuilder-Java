@@ -10,48 +10,48 @@ on:
     types: [created]
 
 jobs:
-#  build:
-#    runs-on: ubuntu-latest
-#    strategy:
-#      matrix:
-#        java: [ 1.8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
-#    name: Java ${{ matrix.java }} build
-#    steps:
-#      - name: Checkout source code
-#        uses: actions/checkout@v2
-#      - name: Set up JDK
-#        uses: actions/setup-java@v1
-#        with:
-#          java-package: jdk
-#          java-version: ${{ matrix.java }}
-#      - name: Build with Maven
-#        run: mvn -B package --file pom.xml
-#      - run: mkdir artifacts && cp target/*.jar artifacts
-#      - name: Upload Maven build artifact
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: artifact.jar
-#          path: artifacts
-#
-#  test:
-#    needs: [ build ]
-#    runs-on: ubuntu-latest
-#    strategy:
-#      matrix:
-#        java: [ 1.8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
-#    name: Java ${{ matrix.java }} Test
-#    steps:
-#      - name: Checkout the repository
-#        uses: actions/checkout@v2
-#      - name: Set up JDK
-#        uses: actions/setup-java@v1
-#        with:
-#          java-version: ${{ matrix.java }}
-#      - name: Run tests with Maven
-#        run: mvn -B test --file pom.xml
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: [ 1.8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
+    name: Java ${{ matrix.java }} build
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-package: jdk
+          java-version: ${{ matrix.java }}
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
+      - run: mkdir artifacts && cp target/*.jar artifacts
+      - name: Upload Maven build artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifact.jar
+          path: artifacts
+
+  test:
+    needs: [ build ]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: [ 1.8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
+    name: Java ${{ matrix.java }} Test
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{ matrix.java }}
+      - name: Run tests with Maven
+        run: mvn -B test --file pom.xml
 
   publish:
-#    needs: [ build, test ]
+    needs: [ build, test ]
     runs-on: ubuntu-latest
     permissions:
       contents: read
