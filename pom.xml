@@ -74,11 +74,11 @@
             <id>ossrh</id>
             <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
-<!--        <repository>-->
-<!--            <id>github</id>-->
-<!--            <name>GitHub Packages</name>-->
-<!--            <url>https://maven.pkg.github.com/BastiaanJansen/uri-builder-java</url>-->
-<!--        </repository>-->
+        <!--        <repository>-->
+        <!--            <id>github</id>-->
+        <!--            <name>GitHub Packages</name>-->
+        <!--            <url>https://maven.pkg.github.com/BastiaanJansen/uri-builder-java</url>-->
+        <!--        </repository>-->
     </distributionManagement>
 
     <properties>

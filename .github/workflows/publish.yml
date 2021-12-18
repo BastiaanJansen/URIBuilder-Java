@@ -1,3 +1,5 @@
+
+
 # This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
 # For more information see: https://github.com/actions/setup-java#apache-maven-with-a-settings-path
 
@@ -51,7 +53,7 @@ jobs:
         run: mvn -B test --file pom.xml
 
   publish:
-#    needs: [ build, test ]
+    #    needs: [ build, test ]
     runs-on: ubuntu-latest
     permissions:
       contents: read
