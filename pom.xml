@@ -4,7 +4,7 @@
 
     <groupId>com.github.bastiaanjansen</groupId>
     <artifactId>uribuilder-java</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.1</version>
     <url>https://github.com/BastiaanJansen/uri-builder-java</url>
 
     <name>URIBuilder-Java</name>
@@ -20,8 +20,8 @@
 
     <scm>
         <connection>scm:git:https://github.com/BastiaanJansen/uri-builder-java.git</connection>
-        <url>http://github.com/BastiaanJansen/uri-builder-javaa</url>
         <developerConnection>scm:git:https://github.com/BastiaanJansen/uri-builder-java.git</developerConnection>
+        <url>http://github.com/BastiaanJansen/uri-builder-java</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -52,11 +52,19 @@
     </build>
 
     <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
         <repository>
-            <id>github</id>
-            <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/BastiaanJansen/uri-builder-java</url>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
+<!--        <repository>-->
+<!--            <id>github</id>-->
+<!--            <name>GitHub Packages</name>-->
+<!--            <url>https://maven.pkg.github.com/BastiaanJansen/uri-builder-java</url>-->
+<!--        </repository>-->
     </distributionManagement>
 
     <properties>
