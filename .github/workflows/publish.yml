@@ -52,7 +52,7 @@ jobs:
       - name: Run tests with Maven
         run: mvn -B test --file pom.xml
 
-  publish:
+  publish-maven-central:
     #    needs: [ build, test ]
     runs-on: ubuntu-latest
     permissions:
