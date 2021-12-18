@@ -14,13 +14,13 @@ A utility Java library to easily create and parse URI's.
 <dependency>
     <groupId>com.github.bastiaanjansen</groupId>
     <artifactId>uribuilder-java</artifactId>
-    <version>1.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
 ### Gradle
 ```gradle
-implementation 'com.github.bastiaanjansen:uribuilder-java:1.0'
+implementation 'com.github.bastiaanjansen:uribuilder-java:1.0.1'
 ```
 
 ## Usage
