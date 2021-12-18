@@ -47,16 +47,16 @@ jobs:
       - name: Run tests with Maven
         run: mvn -B test --file pom.xml
 
-  lint:
-    name: Linter
-    needs: [ build ]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout source code
-        uses: actions/checkout@v2
-      - name: Lint Codebase
-        uses: github/super-linter/slim@v4
-        env:
-          VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#  lint:
+#    name: Linter
+#    needs: [ build ]
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout source code
+#        uses: actions/checkout@v2
+#      - name: Lint Codebase
+#        uses: github/super-linter/slim@v4
+#        env:
+#          VALIDATE_ALL_CODEBASE: false
+#          DEFAULT_BRANCH: main
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
