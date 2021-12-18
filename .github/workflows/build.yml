@@ -11,11 +11,11 @@ on:
 
 jobs:
   build:
+    name: Java ${{ matrix.java }} build
     runs-on: ubuntu-latest
     strategy:
       matrix:
         java: [ 1.8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
-    name: Java ${{ matrix.java }} build
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
@@ -34,12 +34,12 @@ jobs:
           path: artifacts
 
   test:
+    name: Java ${{ matrix.java }} Test
     needs: [build]
     runs-on: ubuntu-latest
     strategy:
       matrix:
         java: [ 1.8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
-    name: Java ${{ matrix.java }} Test
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v2
@@ -49,3 +49,7 @@ jobs:
           java-version: ${{ matrix.java }}
       - name: Run tests with Maven
         run: mvn -B test --file pom.xml
+      - name: Generate JaCoCo Badge
+        uses: cicirello/jacoco-badge-generator@v2
+        with:
+          generate-branches-badge: true
