@@ -52,28 +52,28 @@ jobs:
       - name: Run tests with Maven
         run: mvn -B test --file pom.xml
 
-  publish-maven-central:
-    #    needs: [ build, test ]
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    name: Publish to Maven Central Repository
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up Java
-        uses: actions/setup-java@v2
-        with:
-          java-version: '11'
-          distribution: 'adopt'
-      - name: Publish package
-        uses: samuelmeuli/action-maven-publish@v1
-        with:
-          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-          gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
-          nexus_username: ${{ secrets.NEXUS_USERNAME }}
-          nexus_password: ${{ secrets.NEXUS_PASSWORD }}
-          maven_profiles: "deploy-maven-central"
+#  publish-maven-central:
+#    #    needs: [ build, test ]
+#    runs-on: ubuntu-latest
+#    permissions:
+#      contents: read
+#      packages: write
+#    name: Publish to Maven Central Repository
+#    steps:
+#      - uses: actions/checkout@v2
+#      - name: Set up Java
+#        uses: actions/setup-java@v2
+#        with:
+#          java-version: '11'
+#          distribution: 'adopt'
+#      - name: Publish package
+#        uses: samuelmeuli/action-maven-publish@v1
+#        with:
+#          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+#          gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
+#          nexus_username: ${{ secrets.NEXUS_USERNAME }}
+#          nexus_password: ${{ secrets.NEXUS_PASSWORD }}
+#          maven_profiles: "deploy-maven-central"
 
   publish-github-registry:
     runs-on: ubuntu-latest
@@ -88,9 +88,7 @@ jobs:
           server-id: github
           java-version: '11'
           distribution: 'adopt'
-      - name: Activate profile
-        run: mvn clean install -P deploy-github-registry
       - name: Publish package
-        run: mvn --batch-mode deploy
+        run: mvn --batch-mode --activate-profiles "deploy-github-registry" deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
