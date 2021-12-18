@@ -4,7 +4,7 @@
 
     <groupId>com.github.bastiaanjansen</groupId>
     <artifactId>uribuilder-java</artifactId>
-    <version>0.0.1</version>
+    <version>1.0.1</version>
     <url>https://github.com/BastiaanJansen/uri-builder-java</url>
 
     <name>URIBuilder-Java</name>
