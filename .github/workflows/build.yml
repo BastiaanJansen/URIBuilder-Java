@@ -52,7 +52,7 @@ jobs:
 
   lint:
     name: Linter
-    needs: [ test ]
+    needs: [ build ]
     runs-on: ubuntu-latest
     steps:
       - name: Lint Code Base
