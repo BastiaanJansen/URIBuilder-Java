@@ -63,6 +63,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'
+          distribution: 'adopt'
       - name: Publish package
         uses: samuelmeuli/action-maven-publish@v1
         with:
