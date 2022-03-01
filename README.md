@@ -33,7 +33,7 @@ URI uri = new URIBuilder()
     .withPath("/path")
     .withQueryParamater("key", "value")
     .withFragment("fragment")
-    .build()
+    .build();
 ```
 
 To parse a URI string to a URI instance:
